@@ -16,6 +16,7 @@ class RedditSearchViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var searchTermTextField: UITextField!
     @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet weak var resultsTextView: UITextView!
     var tableData = []
     
     //==================================================
@@ -59,10 +60,12 @@ class RedditSearchViewController: UIViewController, UITableViewDataSource, UITab
         
         guard let searchTerm = searchTermTextField.text where searchTerm.characters.count > 0 else { return }
         
-        RedditModelController.getSubReddits(searchTerm) { 
+        RedditModelController.getSubReddits(searchTerm) { (resultsDict) in
             
-            
+            // TODO: Implement getting the results and populating tableData
         }
+        
+        resultsTextView.text = ":)"
     }
     
 

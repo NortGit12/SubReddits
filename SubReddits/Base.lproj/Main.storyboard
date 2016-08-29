@@ -101,6 +101,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="resultsTableView" destination="3Fa-JJ-mRB" id="SGd-nJ-GAw"/>
+                        <outlet property="resultsTextView" destination="ls2-nW-yW0" id="CAZ-NH-nPS"/>
                         <outlet property="searchTermTextField" destination="QIp-lY-P1r" id="6sk-93-60w"/>
                     </connections>
                 </viewController>
