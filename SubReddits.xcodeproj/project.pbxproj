@@ -59,9 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				1F5DD3031D748882007A595D /* AppDelegate.swift */,
-				1F5DD3181D748E73007A595D /* NetworkController.swift */,
-				1F5DD31C1D748FE3007A595D /* ModelController */,
 				1F5DD3171D748B37007A595D /* ViewController */,
+				1F5DD31C1D748FE3007A595D /* ModelController */,
+				1F66F6D01D74B0F900092A58 /* OtherController */,
 				1F5DD30A1D748882007A595D /* Assets.xcassets */,
 				1F5DD30F1D748882007A595D /* Info.plist */,
 				1F5DD30C1D748882007A595D /* LaunchScreen.storyboard */,
@@ -84,6 +84,14 @@
 				1F5DD31A1D748F56007A595D /* RedditModelController.swift */,
 			);
 			name = ModelController;
+			sourceTree = "<group>";
+		};
+		1F66F6D01D74B0F900092A58 /* OtherController */ = {
+			isa = PBXGroup;
+			children = (
+				1F5DD3181D748E73007A595D /* NetworkController.swift */,
+			);
+			name = OtherController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

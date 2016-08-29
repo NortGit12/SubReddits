@@ -38,17 +38,9 @@ class RedditModelController {
             guard let data = data
                 , responseDataString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
                 , jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String : AnyObject]
+                , dataDictionary = jsonDictionary[RedditModelController.parentDataKey] as? [String : AnyObject]
+                , childrenDictionaryArray = dataDictionary[childrenKey] as? [[String: AnyObject]]
                 else { return }
-            
-            print("\njsonDictionary = \(jsonDictionary)")
-            
-            guard let dataDictionary = jsonDictionary[RedditModelController.parentDataKey] as? [String : AnyObject] else { return }
-            
-            print("\n\ndataDictionary = \(dataDictionary)")
-            
-            guard let childrenDictionaryArray = dataDictionary[childrenKey] as? [[String: AnyObject]] else { return }
-            
-            print("\n\nchildrenDictionaryArray = \(childrenDictionaryArray)")
             
             var titlesArray = [String]()
             for child in childrenDictionaryArray {
@@ -59,8 +51,6 @@ class RedditModelController {
                 
                 titlesArray.append(title)
             }
-            
-            print("titlesArray = \(titlesArray)")
             
             if error != nil {
                 
