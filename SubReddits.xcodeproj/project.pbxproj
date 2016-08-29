@@ -11,6 +11,9 @@
 		1F5DD3091D748882007A595D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5DD3071D748882007A595D /* Main.storyboard */; };
 		1F5DD30B1D748882007A595D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5DD30A1D748882007A595D /* Assets.xcassets */; };
 		1F5DD30E1D748882007A595D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5DD30C1D748882007A595D /* LaunchScreen.storyboard */; };
+		1F5DD3161D748B2B007A595D /* RedditSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DD3151D748B2B007A595D /* RedditSearchViewController.swift */; };
+		1F5DD3191D748E73007A595D /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DD3181D748E73007A595D /* NetworkController.swift */; };
+		1F5DD31B1D748F56007A595D /* RedditModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DD31A1D748F56007A595D /* RedditModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		1F5DD30A1D748882007A595D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F5DD30D1D748882007A595D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F5DD30F1D748882007A595D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F5DD3151D748B2B007A595D /* RedditSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditSearchViewController.swift; sourceTree = "<group>"; };
+		1F5DD3181D748E73007A595D /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		1F5DD31A1D748F56007A595D /* RedditModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +59,31 @@
 			isa = PBXGroup;
 			children = (
 				1F5DD3031D748882007A595D /* AppDelegate.swift */,
-				1F5DD3071D748882007A595D /* Main.storyboard */,
+				1F5DD3181D748E73007A595D /* NetworkController.swift */,
+				1F5DD31C1D748FE3007A595D /* ModelController */,
+				1F5DD3171D748B37007A595D /* ViewController */,
 				1F5DD30A1D748882007A595D /* Assets.xcassets */,
-				1F5DD30C1D748882007A595D /* LaunchScreen.storyboard */,
 				1F5DD30F1D748882007A595D /* Info.plist */,
+				1F5DD30C1D748882007A595D /* LaunchScreen.storyboard */,
+				1F5DD3071D748882007A595D /* Main.storyboard */,
 			);
 			path = SubReddits;
+			sourceTree = "<group>";
+		};
+		1F5DD3171D748B37007A595D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F5DD3151D748B2B007A595D /* RedditSearchViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		1F5DD31C1D748FE3007A595D /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				1F5DD31A1D748F56007A595D /* RedditModelController.swift */,
+			);
+			name = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,7 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5DD3161D748B2B007A595D /* RedditSearchViewController.swift in Sources */,
 				1F5DD3041D748882007A595D /* AppDelegate.swift in Sources */,
+				1F5DD3191D748E73007A595D /* NetworkController.swift in Sources */,
+				1F5DD31B1D748F56007A595D /* RedditModelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +312,7 @@
 				1F5DD3141D748882007A595D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

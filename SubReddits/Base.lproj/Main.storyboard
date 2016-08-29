@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reddit Search View Controller-->
         <scene sceneID="iLT-6p-2Cf">
             <objects>
-                <viewController id="pSy-xG-8o3" sceneMemberID="viewController">
+                <viewController id="pSy-xG-8o3" customClass="RedditSearchViewController" customModule="SubReddits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="etr-Gg-wG9"/>
                         <viewControllerLayoutGuide type="bottom" id="n0j-ZV-Ahp"/>
@@ -24,14 +24,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="943-4y-wzf">
                                         <rect key="frame" x="8" y="8" width="304" height="29"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIp-lY-P1r">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIp-lY-P1r">
                                                 <rect key="frame" x="0.0" y="0.0" width="251" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-2Z-Xte">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-2Z-Xte">
                                                 <rect key="frame" x="256" y="0.0" width="48" height="29"/>
                                                 <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonTapped:" destination="pSy-xG-8o3" eventType="touchUpInside" id="QZ5-di-KXX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -45,16 +48,61 @@
                                     <constraint firstItem="943-4y-wzf" firstAttribute="trailing" secondItem="bEm-mE-Xqg" secondAttribute="trailingMargin" id="ll1-zt-AHv"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Fa-JJ-mRB">
+                                <rect key="frame" x="0.0" y="108" width="320" height="283"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="379-gq-fGB" style="IBUITableViewCellStyleDefault" id="seS-xJ-DXN">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="seS-xJ-DXN" id="RKP-0N-66I">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="379-gq-fGB">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pSy-xG-8o3" id="HWW-rx-VcP"/>
+                                    <outlet property="delegate" destination="pSy-xG-8o3" id="9jn-ml-6FZ"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum " translatesAutoresizingMaskIntoConstraints="NO" id="ls2-nW-yW0">
+                                <rect key="frame" x="9" y="399" width="301" height="161"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bEm-mE-Xqg" firstAttribute="leading" secondItem="bMw-fb-Cvr" secondAttribute="leading" id="E11-fE-iHE"/>
+                            <constraint firstItem="3Fa-JJ-mRB" firstAttribute="leading" secondItem="bEm-mE-Xqg" secondAttribute="leading" id="MFq-fb-ySI"/>
                             <constraint firstItem="bEm-mE-Xqg" firstAttribute="top" secondItem="etr-Gg-wG9" secondAttribute="bottom" id="PLK-nt-OtV"/>
+                            <constraint firstItem="3Fa-JJ-mRB" firstAttribute="top" secondItem="etr-Gg-wG9" secondAttribute="bottom" constant="44" id="XWD-LS-IYK"/>
                             <constraint firstAttribute="trailing" secondItem="bEm-mE-Xqg" secondAttribute="trailing" id="aDT-w4-gEX"/>
+                            <constraint firstItem="ls2-nW-yW0" firstAttribute="centerX" secondItem="3Fa-JJ-mRB" secondAttribute="centerX" id="eGv-p1-n87"/>
+                            <constraint firstItem="ls2-nW-yW0" firstAttribute="leading" secondItem="bMw-fb-Cvr" secondAttribute="leadingMargin" constant="-7" id="hEW-Sb-C6L"/>
+                            <constraint firstItem="3Fa-JJ-mRB" firstAttribute="trailing" secondItem="bEm-mE-Xqg" secondAttribute="trailing" id="hGz-oy-IIK"/>
+                            <constraint firstItem="3Fa-JJ-mRB" firstAttribute="bottom" secondItem="n0j-ZV-Ahp" secondAttribute="top" constant="-177" id="maS-9A-2ti"/>
+                            <constraint firstItem="n0j-ZV-Ahp" firstAttribute="top" secondItem="ls2-nW-yW0" secondAttribute="bottom" constant="8" symbolic="YES" id="maf-Z3-LYw"/>
+                            <constraint firstItem="ls2-nW-yW0" firstAttribute="top" secondItem="3Fa-JJ-mRB" secondAttribute="bottom" constant="8" symbolic="YES" id="tjm-Xb-MRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YQ6-z4-RPb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="resultsTableView" destination="3Fa-JJ-mRB" id="SGd-nJ-GAw"/>
+                        <outlet property="searchTermTextField" destination="QIp-lY-P1r" id="6sk-93-60w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUW-fO-hX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
